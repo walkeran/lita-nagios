@@ -34,8 +34,8 @@ module Lita
           service: { short: "s" }
         },
         help: {
-          "nagios enable notif(ication(s)) <-h | --host HOST> [-s | --service SERVICE]" => "Enable notifications for given host/service",
-          "nagios disable notif(ication(s)) <-h | --host HOST> [-s | --service SERVICE]" => "Disable notifications for given host/service",
+          "nagios enable notif(ication(s)) -h HOST [-s SERVICE]" => "Enable notifications for given host/service",
+          "nagios disable notif(ication(s)) -h HOST [-s SERVICE]" => "Disable notifications for given host/service",
         }
 
       def toggle_notifications(response)
@@ -56,7 +56,7 @@ module Lita
           service: { short: "s" }
         },
         help: {
-          "nagios recheck <-h | --host HOST> [-s | --service SERVICE]" => "Reschedule check for given host/service"
+          "nagios recheck -h HOST [-s SERVICE]" => "Reschedule check for given host/service"
         }
 
       def recheck(response)
@@ -84,7 +84,7 @@ module Lita
           message: { short: "m" }
         },
         help: {
-          "nagios ack(nowledge) <-h | --host HOST> [-s | --service SERVICE] [-m | --message MESSAGE]" => "Acknowledge host/service problem with optional message",
+          "nagios ack(nowledge) -h HOST> [-s SERVICE] [-m MESSAGE]" => "Acknowledge host/service problem with optional message",
         }
 
       def acknowledge(response)
@@ -115,7 +115,7 @@ module Lita
           duration: { short: "d" }
         },
         help: {
-          "nagios (fixed|flexible) downtime <-d | --duration DURATION > <-h | --host HOST> [-s | --service SERVICE]" => "Schedule downtime for a host/service with duration units in (m, h, d, default to seconds)"
+          "nagios (fixed|flexible) downtime -d DURATION -h HOST [-s SERVICE]" => "Schedule downtime for a host/service with duration units in (m, h, d, default to seconds)"
         }
 
       def schedule_downtime(response)
